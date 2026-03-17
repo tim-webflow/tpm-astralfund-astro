@@ -1,9 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Section, Container, Block, Link } from '../../devlink/_Builtin/Basic';
+import { Navbar } from '../../devlink/Navbar'; // Import the Navbar component
+import { Footer } from '../../devlink/Footer'; // Import the Footer component
 ---
 
 <Layout>
+  {/* Add Navbar with props. Be sure to include the client load directive */}
+  <Navbar
+      navbarLinkFeatures="Hello"
+      navbarLinkProducts="Webflow"
+      navbarLinkResources="Cloud"
+      navbarLinkContact="tim.mcmackin@webflow.com"
+  client:load />
   <Section
     client:load
     tag="section"
@@ -41,6 +50,7 @@ import { Section, Container, Block, Link } from '../../devlink/_Builtin/Basic';
       </Block>
     </Container>
   </Section>
+  <Footer client:load /> {/* Add Footer with Client load directive */}
 </Layout>
 
 <style>
